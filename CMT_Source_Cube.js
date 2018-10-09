@@ -1,4 +1,6 @@
 var domain = "athocdev.com";
+//https://go.pardot.com/l/191232/2018-10-04/d44rml
+
 
 //var ajaxpath = "//athocdev.com/plugins/system/CMT_Source_Cube/CMT_AJAX.php";
 var ajaxpath = "//svcountrydancer.com/CMT_Source_Cube/CMT_AJAX.php";
@@ -70,11 +72,15 @@ function getReferrer2(){
 	
 	if(queryStr == ""){ // if not set in a test
 		queryStr = window.location.search.toLowerCase();
-		q=queryStr.split("&");
-		for (i = 0; i < q.length; i++) {
-			if(q[i].indexOf("query=")==0){
-				queryStr = q[i].substr(6,200).toLowerCase();
-			}
+//		q=queryStr.split("&");
+//		for (i = 0; i < q.length; i++) {
+//			if(q[i].indexOf("query=")==0){
+//				queryStr = q[i].substr(6,200).toLowerCase();
+//			}
+//		}
+		if(queryStr.indexOf("query=")> -1){
+			s = queryStr.indexOf("query=")+7;
+			queryStr = queryStr.substr(s,200);
 		}
 		
 	}
@@ -140,23 +146,23 @@ var sarr = [
 		for (c=0;c<toks.length;c++){
 			if(toks[c].indexOf("_source")>-1){
 				t2=toks[c].split("=");
-				utm_source = t2[1];
+				utm_source = t2[1].replace("&","");
 			}
 			if(toks[c].indexOf("_medium")>-1){
 				t2=toks[c].split("=");
-				utm_medium = t2[1];
+				utm_medium = t2[1].replace("&","");
 			}
 			if(toks[c].indexOf("_campaign")>-1){
 				t2=toks[c].split("=");
-				utm_campaign = t2[1];
+				utm_campaign = t2[1].replace("&","");
 			}
 			if(toks[c].indexOf("_term")>-1){
 				t2=toks[c].split("=");
-				utm_term = t2[1];
+				utm_term = t2[1].replace("&","");
 			}
 			if(toks[c].indexOf("_content")>-1){
 				t2=toks[c].split("=");
-				utm_content = t2[1];
+				utm_content = t2[1].replace("&","");
 			}
 		}
 	}
@@ -193,7 +199,9 @@ var sarr = [
 		
 	if(lastTouch > "" && lastTouch !="No Referrer"){
 		queryStr = queryStr.replace("?","");
-		queryStr = queryStr.replace("=",":");
+		queryStr = queryStr.replace(/=/g,':'); // replace all
+		queryStr = queryStr.replace(/&/g, '\n');
+
 		//url then ref setReferCookie=lastTouch^Google paid^https://www.spark.com^https://www.spark.com
 		img2.src = ajaxpath+'?setReferCookie=lastTouch^'+lastTouch+ "^" + encodeURI(queryStr) + "^" + encodeURI(referrerStr) + "&rnd=" + randStr(8);
 		//refsource =  encodeURI(queryStr) + "^" + encodeURI(referrerStr);
@@ -304,6 +312,24 @@ var sarr = [
 		document.getElementsByName("form[refsource]")[1].value = refsource;
 	}
 	//GB 9-17-18
+	// GB utm - write values - utm_source = utm_medium = utm_campaign = utm_term = utm_content 
+	if(utm_source > "" && document.getElementsByName("form[utm_source]")[0]){
+		document.getElementsByName("form[utm_source]")[0].value = utm_source;
+	}
+	if(utm_medium > "" && document.getElementsByName("form[utm_medium]")[0]){
+		document.getElementsByName("form[utm_medium]")[0].value = utm_medium;
+	}
+	if(utm_campaign > "" && document.getElementsByName("form[utm_campaign]")[0]){
+		document.getElementsByName("form[utm_campaign]")[0].value = utm_campaign;
+	}
+	if(utm_term > "" && document.getElementsByName("form[utm_term]")[0]){
+		document.getElementsByName("form[utm_term]")[0].value = utm_term;
+	}
+	if(utm_content > "" && document.getElementsByName("form[utm_content]")[0]){
+		document.getElementsByName("form[utm_content]")[0].value = utm_content;
+	}
+	
+	// GB end utm 
 	
 // this section works for testharness only
 	if(parent.document.getElementsByName("lastTouch")[0]){parent.document.getElementsByName("lastTouch")[0].value='';}
