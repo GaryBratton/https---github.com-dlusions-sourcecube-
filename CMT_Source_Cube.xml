@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.1" type="plugin" group="system">
+	<name>CMT Source Cube</name>
+	<author>Gary Bratton CMT</author>
+	<creationDate>Aug 2016</creationDate>
+	<copyright>Copyright (C) 2016 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>gary@coreandmoretechnologies.com</authorEmail>
+	<authorUrl>www.coreandmoretechnologies.com</authorUrl>
+	<version>1.1.0</version>
+	<description>Creates CMT_Source_Cube in RSForms for Pardot/n
+			Fires on rsfp_f_onBeforeFormDisplay, Sets up CORS and loads js\n  Note that there is a variable set in the javascript file that point to the active server!</description>
+	<files>
+		<filename plugin="CMT_Source_Cube">CMT_Source_Cube.php</filename>
+		<filename>index.html</filename>
+		<filename>CMT_Source_Cube.js</filename>
+		<filename>testharness.php</filename>
+		<filename>testharness.xml</filename>
+		<filename>CMT_AJAX.php</filename>
+		<filename>runit.php</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="cors_list" type="textarea"
+					default="http://www2.athoc.com, http://athocdev.com, http://dev.athoc.com, http://athoc.ossdev1.com"
+					description=""
+					label="CORS List (comma delimited)"
+					size="200"
+					rows="8"
+				/>
+				<field name="cookiepath" type="text"
+					default=".athoc.com"
+					description="the path on the production server to save cookies"
+					label="cookie path"
+					size="100"
+				/>
+				 <field name="FormIDs" type="hidden"
+                	default="4,5,6"
+              		description="FormID's of RSForms that will use the CMT Referer Source"
+                   	label="FormID's of RSForms that will use the  CMT Referer Source"
+                   	size="100"
+                />
+                <field name="sourceFields" type="subform"
+    				formsource="/plugins/system/CMT_Source_Cube/sourceSubForm.xml" 
+    				multiple="true"
+    				label="Source Fields" 
+    				layout="joomla.form.field.subform.repeatable-table"
+    				description="Source Fields Subform" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

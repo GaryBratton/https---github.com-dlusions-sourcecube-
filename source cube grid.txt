@@ -1,0 +1,25 @@
+Source Type 	Subtype 	BBSource 	Referrer 		Querystr key 
+ 
+ORGANIC SEARCH	Google		Web			www.google.com
+ORGANIC SEARCH	Bing		Web			www.bing.com/
+ORGANIC SEARCH	Yahoo		Web			search.yahoo.com
+ORGANIC SEARCH	Ask.Com		Web			www.ask.com
+PAID SEARCH		Google		Paid Media					utm_source=google	
+PAID SEARCH		Google		Paid Media					gclid=	
+PAID SEARCH		Bing		Paid Media					utm_source=bing	
+PAID SEARCH		Yahoo		Paid Media	/cbclk2/		utm_source=gemini
+PAID SEARCH		Yahoo		Paid Media	search.yahoo.com	_ylt=
+ORGANIC SOCIAL	Blog		Web
+ORGANIC SOCIAL	Facebook	Web			www.facebook.com
+ORGANIC SOCIAL	Twitter		Web			t.co/
+ORGANIC SOCIAL	Linkedin	Web			www.linkedin.com	d_flagship3_search_srp_top
+ORGANIC SOCIAL	Linkedin	Web								d_flagship3_feed
+PAID SOCIAL		Facebook	Paid Media	l.facebook.com		utm_source=facebook
+PAID SOCIAL		Twitter		Paid Media						utm_source=twitter.com
+PAID SOCIAL		LinkedIn	Paid Media	bit.ly/				utm_source=LinkedIn
+REFERRAL		Other Sites	External
+REFERRAL		Partners	Partner
+MISC			Press Rel	PR
+Misc			Direct Web	Web
+  
+

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<config>
+		<CORSpath>athocdev.com/plugins/system/cmt_perdot/CMT_AJAX.php</CORSpath>
+		<cookieDomain>.athoc.com</cookieDomain>
+		<xmldocpath>http://dev.athoc.com/plugins/system/CMTForm/testHarness.xml</xmldocpath>
+		<xmldocURL>http://athocdev.com/plugins/system/CMT_Source_Cube/testharness.xml</xmldocURL>
+	</config>
+	
+	<row>
+		<desc>    Google paid search</desc>
+		<referrer>    https://www.google.com/</referrer>
+		<querystr>     ?utm_source=Google</querystr>
+		<form2load><![CDATA[   http://dev.athocdev.com/company/contact-us.html]]></form2load>
+	</row>
+	<row>
+		<desc>  athocdev.com</desc>
+		<referrer>  https://www.google.com/</referrer>
+		<querystr>  </querystr>
+		<form2load><![CDATA[  https://athocdev.com/company/contact-us.html]]></form2load>
+	</row>
+	<row>
+		<desc>  querystring to utm_source=LinkedIn</desc>
+		<referrer>  </referrer>
+		<querystr>  ?utm_source=LinkedIn</querystr>
+		<form2load><![CDATA[  http://athoc.com/company/contact-us.html]]></form2load>
+	</row>
+	<row>
+		<desc>       Bing-LinkedIn</desc>
+		<referrer>       https://www.bing.com/</referrer>
+		<querystr>       ?utm_source=Bing</querystr>
+		<form2load><![CDATA[ athoc.com/company/contact-us.html]]></form2load>
+	</row>
+	<row>
+		<desc>   emulate google paid search</desc>
+		<referrer>   https://www.google.com</referrer>
+		<querystr>   ?gclid=CK7U68vd2s4CFQesaQodUbkEzQ</querystr>
+		<form2load><![CDATA[ https://athocdev.com/company/contact-us.html]]></form2load>
+	</row>
+	<row>
+		<desc>    Yahoo - Bing</desc>
+		<referrer>    https://www.Yahoo.com</referrer>
+		<querystr>    ?utm_source=Bing</querystr>
+		<form2load><![CDATA[ https://athocdev.com/company/contact-us.html]]></form2load>
+	</row>
+	<row>
+		<desc>    athoc.ossdev1.com</desc>
+		<referrer>    https://athoc.ossdev1.com/</referrer>
+		<querystr>    ?firstTouch=Google Ad</querystr>
+		<form2load><![CDATA[ https://athocdev.com/company/contact-us.html]]></form2load>
+	</row>
+	<row>
+		<desc>     bing bing</desc>
+		<referrer>     http://www.bing.com</referrer>
+		<querystr>     ?utm_source=Bing</querystr>
+		<form2load><![CDATA[     http://athocdev.com/l/38732/2016-08-25/5fk1lc]]></form2load>
+	</row>
+
+<row><desc>   offset test for linked in</desc><referrer>   </referrer><querystr>   ?d_flagship3_search_srp_top</querystr><form2load><![CDATA[ http://athocdev.com/company/contact-us.html]]></form2load></row><row><desc>    facebook  Paid ad</desc><referrer>    https://l.facebook.com/</referrer><querystr>    </querystr><form2load><![CDATA[  http://athocdev.com/company/contact-us.html]]></form2load></row><row><desc>   facebook</desc><referrer>   https://www.facebook.com/</referrer><querystr>   </querystr><form2load><![CDATA[ http://athocdev.com/company/contact-us.html]]></form2load></row><row><desc>  Adam test row 1</desc><referrer>  www.securityinfowatch.com</referrer><querystr>  </querystr><form2load><![CDATA[  https://athocdev.com/company/contact-us.html]]></form2load></row><row><desc>   Adam Test row 3</desc><referrer> https://defense-military.athoc.com/industries/defense-military	</referrer><querystr>   </querystr><form2load><![CDATA[   http://athocdev.com/company/contact-us.html]]></form2load></row></root>
